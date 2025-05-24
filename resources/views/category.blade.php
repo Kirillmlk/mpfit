@@ -1,9 +1,8 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('title', 'Категория ' . $category->name)
 
 @section('content')
-    <div class="starter-template">
         <h1>
             {{ $category->name }} {{ $category->products->count() }}
         </h1>
@@ -15,5 +14,4 @@
                 @include('card', compact('product'))
             @endforeach
         </div>
-    </div>
 @endsection
