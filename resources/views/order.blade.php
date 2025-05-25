@@ -42,7 +42,7 @@
                         <br>
                         @csrf
                         <input type="submit" class="btn btn-success"
-                               href="http://laravel-diplom-1.rdavydov.ru/basket/place" value="Подтвердить заказ">
+                               href="#" value="Подтвердить заказ">
                     </div>
                 </form>
             </div>

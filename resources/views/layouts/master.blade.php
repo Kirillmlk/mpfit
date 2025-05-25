@@ -48,6 +48,5 @@
     <div class="starter-template"
     @yield('content')
 </div>
-</div>
 </body>
 </html>
