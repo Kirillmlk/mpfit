@@ -33,7 +33,7 @@
                                 <label for="name" class="control-label col-lg-offset-3 col-lg-2">Комментарий к
                                     заказу: </label>
                                 <div class="col-lg-4">
-                                    <input type="text" name="text" id="text" value="" class="form-control">
+                                    <input type="text" name="comment" id="comment" value="" class="form-control">
                                 </div>
                             </div>
                         </div>

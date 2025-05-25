@@ -24,7 +24,11 @@ class BasketController extends Controller
             return redirect()->route('index');
         }
         $order = Order::find($orderId);
-        dd($request->all());
+        $result = $order->saveOrder(
+            $request->name,
+            $request->phone,
+            $request->text,
+        );
 
         return redirect()->route('index');
     }
@@ -42,12 +46,14 @@ class BasketController extends Controller
     public function basketAdd($productId)
     {
         $orderId = session('orderId');
+
         if (is_null($orderId)) {
-            $order = Order::create()->id;
+            $order = Order::create();
             session(['orderId' => $order->id]);
         } else {
             $order = Order::find($orderId);
         }
+
         if ($order->products->contains($productId)) {
             $pivotRow = $order->products()->where('product_id', $productId)->first()->pivot;
             $pivotRow->count++;
