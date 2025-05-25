@@ -27,9 +27,21 @@
                 <li><a href="{{ route('index') }}">Сбросить проект в начальное состояние</a></li>
             </ul>
 
-{{--                        <ul class="nav navbar-nav navbar-right">--}}
-{{--                            <li><a href="http://laravel-diplom-1.rdavydov.ru/admin/home">Панель администратора</a></li>--}}
-{{--                        </ul>--}}
+            <ul class="nav navbar-nav navbar-right">
+                @guest
+                    <li><a href="{{ route('login') }}">Панель администратора</a></li>
+                @endguest
+
+                @auth
+{{--                    <li><a href="{{ route('home') }}">Панель администратора</a></li>--}}
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST" style="display:inline">
+                                @csrf
+                                <button type="submit" class="btn btn-link navbar-btn">Выйти</button>
+                            </form>
+                        </li>
+                @endauth
+            </ul>
         </div>
     </div>
 </nav>
