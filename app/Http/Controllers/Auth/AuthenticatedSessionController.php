@@ -12,6 +12,11 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
+
+    protected  function redirectTo()
+    {
+        return route('home');
+    }
     /**
      * Display the login view.
      */
